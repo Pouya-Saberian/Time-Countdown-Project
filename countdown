@@ -1,0 +1,14 @@
+# Time-Countdown-Project
+import time
+t=int(input('enter the time in seconds:'))
+def countdown(t):
+    while t>=0:
+        mins , secs = divmod(t ,60)
+        hrs ,mins = divmod(mins ,60)
+        timer = f'{hrs:02d}{mins:02d}:{secs:02d}'
+        print(timer ,end='\r')
+        t -=1
+        time.sleep(1)
+    print('\ntime is up')
+    
+countdown(t)
